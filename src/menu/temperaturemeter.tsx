@@ -1,4 +1,21 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+
+import ProviderContect from '../provider';
+
+function TemperatureMeter() {
+  const global = useContext(ProviderContect)
+  console.log(global.apiRespost.weather[0].description)
+
+  return (
+    <TemperatureBarStyle>
+      <h1>{global.apiRespost?global.apiRespost.main.temp +"ºC":'--'}</h1>
+      <h2>{global.apiRespost?global.apiRespost.weather[0].description:" no data "}</h2>
+      <div></div>
+    </TemperatureBarStyle>
+  );
+}
+export default TemperatureMeter;
 
 const TemperatureBarStyle = styled.div`
   width: 426px;
@@ -31,13 +48,3 @@ const TemperatureBarStyle = styled.div`
     text-align: center;
   }
 `;
-function TemperatureMeter() {
-  return (
-    <TemperatureBarStyle>
-      <h1>31ºC</h1>
-      <h2>Céu aberto</h2>
-      <div></div>
-    </TemperatureBarStyle>
-  );
-}
-export default TemperatureMeter;
