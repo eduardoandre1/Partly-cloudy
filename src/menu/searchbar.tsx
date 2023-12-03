@@ -4,13 +4,13 @@ import Swal from 'sweetalert2';
 
 import ProviderContect from '../provider';
 import BarStyle from './searchbarstyle';
-
-function search(location) {
+import searchBylocal from './search';
+function search2(location) {
   const api = axios
     .get(
       `https://api.openweathermap.org/data/2.5/weather?q=${location.location}&APPID=${
         import.meta.env.VITE_KEY
-      }&mode=json${!location.isfaisFarenheit ? '&units=metric' : ``}`,
+      }&mode=json${!location.isFarenheit ? '&units=metric' : ``}`,
     )
     .then((response) => location.setApi(response.data))
     .catch((response) => {
@@ -30,7 +30,7 @@ function SearchBar() {
   return (
     <BarStyle>
       <svg
-        onClick={() => search(global)}
+        onClick={() => search2(global)}
         xmlns="http://www.w3.org/2000/svg"
         width="38"
         height="40"

@@ -12,7 +12,7 @@ function TemperatureMeter() {
     <TemperatureBarStyle>
       <Espaço>
         <img src={image} />
-        <h1>{global.apiRespost ? parseInt(global.apiRespost.main.temp) + 'ºC' : '--'}</h1>
+        <h1>{global.apiRespost ? parseInt(global.apiRespost.main.temp): ''}{!global.isFarenheit?'°C':'°F'}</h1>
         <br />
       </Espaço>
       <h2>
@@ -26,7 +26,7 @@ export default TemperatureMeter;
 
 const TemperatureBarStyle = styled.div`
   width: 426px;
-  height: 490px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

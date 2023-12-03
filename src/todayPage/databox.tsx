@@ -9,19 +9,19 @@ function DataBox() {
     <Databox>
       <div>
         <h2>minima</h2>
-        <h1>{global.apiRespost ? global.apiRespost.main.temp_min : '--'}</h1>
+        <h1>{global.apiRespost ? global.apiRespost.main.temp_min : '--'}{!global.isFarenheit?'°C':'°F'}</h1>
       </div>
       <div>
         <h2>maxima</h2>
-        <h1>{global.apiRespost ? global.apiRespost.main.temp_max : '--'}</h1>
+        <h1>{global.apiRespost ? global.apiRespost.main.temp_max : '--'}{!global.isFarenheit?'°C':'°F'}</h1>
       </div>
       <div>
         <h2>umidade</h2>
-        <h1>{global.apiRespost ? global.apiRespost.main.humidity : '--'}</h1>
+        <h1>{global.apiRespost ? global.apiRespost.main.humidity+ '%' : '--%'}</h1>
       </div>
       <div>
         <h2>velocidade do vento</h2>
-        <h1>{global.apiRespost ? global.apiRespost.wind.speed : '--'}</h1>
+        <h1>{global.apiRespost ? global.apiRespost.wind.speed+'m/s' : '--m/s'}</h1>
       </div>
     </Databox>
   );
