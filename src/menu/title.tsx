@@ -1,3 +1,5 @@
+import casaco from '../resources/casaco.png';
+
 import styled from 'styled-components';
 function Title() {
   const Titlestyle = styled.div`
@@ -24,7 +26,7 @@ function Title() {
   `;
   return (
     <Titlestyle>
-      <img src="resources\casaco.png" alt="coath" />
+      <img src={casaco} alt="coath" />
       <h1>Levo um casaquinho?</h1>
     </Titlestyle>
   );

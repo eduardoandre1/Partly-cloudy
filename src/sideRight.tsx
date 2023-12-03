@@ -8,7 +8,9 @@ function Page() {
   //.catch((response)=> console.log(response.message))
   return (
     <div className="page">
-      <h1>{dadosapi}</h1>
+     minimenu
+     bloco titulo e subtitulo 
+     bloco maximas e minimas
     </div>
   );
 }
