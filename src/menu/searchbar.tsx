@@ -1,19 +1,26 @@
 import axios from 'axios';
 import { useContext } from 'react';
+import Swal from 'sweetalert2';
 
 import ProviderContect from '../provider';
 import BarStyle from './searchbarstyle';
-
 
 function search(location) {
   const api = axios
     .get(
       `https://api.openweathermap.org/data/2.5/weather?q=${location.location}&APPID=${
         import.meta.env.VITE_KEY
-      }&mode=json${!location.isfaisFarenheit?'&units=metric':``}`,
+      }&mode=json${!location.isfaisFarenheit ? '&units=metric' : ``}`,
     )
     .then((response) => location.setApi(response.data))
-    .catch((response) => console.log(response.message));
+    .catch((response) => {
+      return Swal.fire({
+        icon: 'error',
+        title: 'Não foi possivel concluir a busca!!!',
+        text: response.staus===500?"sevidor offline ou cheio tente mais tarde":"não foi possive achar sua localização",
+        footer: `erro:${response.message}`,
+      });
+    });
 }
 function SearchBar() {
   const global = useContext(ProviderContect);

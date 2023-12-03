@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import SearchBar from './searchbar';
-
 const BarStyle = styled.div`
   margin-top: 72px;
   width: 500px;
