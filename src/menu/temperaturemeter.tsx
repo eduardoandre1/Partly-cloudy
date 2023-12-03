@@ -4,15 +4,18 @@ import styled from 'styled-components';
 import ProviderContect from '../provider';
 
 function TemperatureMeter() {
-  const global = useContext(ProviderContect)
-  console.log(global.apiRespost)
+  const global = useContext(ProviderContect);
+  console.log(global.apiRespost);
 
   return (
     <TemperatureBarStyle>
-      <><h1>{global.apiRespost?global.apiRespost.main.temp +"ºC":'--'}</h1>
-      <br />
+      <>
+        <h1>{global.apiRespost ? global.apiRespost.main.temp + 'ºC' : '--'}</h1>
+        <br />
       </>
-      <h2>{global.apiRespost?global.apiRespost.weather[0].description:" no data "}</h2>
+      <h2>
+        {global.apiRespost ? global.apiRespost.weather[0].description : ' no data '}
+      </h2>
       <div></div>
     </TemperatureBarStyle>
   );

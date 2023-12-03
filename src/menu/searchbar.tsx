@@ -17,7 +17,10 @@ function search(location) {
       return Swal.fire({
         icon: 'error',
         title: 'Não foi possivel concluir a busca!!!',
-        text: response.staus===500?"sevidor offline ou cheio tente mais tarde":"não foi possive achar sua localização",
+        text:
+          response.staus === 500
+            ? 'sevidor offline ou cheio tente mais tarde'
+            : 'não foi possive achar sua localização',
         footer: `erro:${response.message}`,
       });
     });
