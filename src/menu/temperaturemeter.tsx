@@ -5,7 +5,7 @@ import ProviderContect from '../provider';
 
 function TemperatureMeter() {
   const global = useContext(ProviderContect)
-  console.log(global.apiRespost.weather[0].description)
+  console.log(global.apiRespost)
 
   return (
     <TemperatureBarStyle>

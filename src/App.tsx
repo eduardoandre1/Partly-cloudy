@@ -12,7 +12,7 @@ function App() {
   const [apiRespost, setApi] = useState('');
   return (
     <div className="conteiner">
-      <ProviderContect.Provider value={{ location, setlocation, apiRespost, setApi,isFarenheit:false }}>
+      <ProviderContect.Provider value={{ location, setlocation, apiRespost, setApi,isFarenheit:false,isFarenheit:false }}>
         <MenuLeft />
         <Page />
       </ProviderContect.Provider>

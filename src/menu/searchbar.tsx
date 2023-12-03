@@ -10,11 +10,9 @@ function search(location) {
     .get(
       `https://api.openweathermap.org/data/2.5/weather?q=${location.location}&APPID=${
         import.meta.env.VITE_KEY
-      }&mode=json&units=metric`,
+      }&mode=json${!location.isfaisFarenheit?'&units=metric':``}`,
     )
-    .then((response) => {
-      location.setApi(response.data);
-    })
+    .then((response) => location.setApi(response.data))
     .catch((response) => console.log(response.message));
 }
 function SearchBar() {
