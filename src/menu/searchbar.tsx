@@ -3,9 +3,9 @@ import { useContext } from 'react';
 import Swal from 'sweetalert2';
 
 import ProviderContect from '../provider';
-import BarStyle from './searchbarstyle';
 import searchBylocal from './search';
-function search2(location) {
+import BarStyle from './searchbarstyle';
+function search(location) {
   const api = axios
     .get(
       `https://api.openweathermap.org/data/2.5/weather?q=${location.location}&APPID=${
@@ -30,7 +30,7 @@ function SearchBar() {
   return (
     <BarStyle>
       <svg
-        onClick={() => search2(global)}
+        onClick={() => search(global)}
         xmlns="http://www.w3.org/2000/svg"
         width="38"
         height="40"

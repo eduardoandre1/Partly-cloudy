@@ -1,10 +1,11 @@
 import './sideRight.css';
 import Databox from './todayPage/databox';
 import Title from './todayPage/title';
+import SwitchPage from './todayPage/switchpage';
 function Page() {
   return (
     <div className="page">
-      minimenu bloco 
+      <SwitchPage /> 
       <Title />
       <Databox />
     </div>
