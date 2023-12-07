@@ -1,7 +1,5 @@
-import './App.css';
-
-import axios from 'axios';
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 import ProviderContect from './provider';
 import MenuLeft from './side-left';
@@ -10,15 +8,22 @@ import Page from './sideRight';
 function App() {
   const [location, setlocation] = useState('');
   const [apiRespost, setApi] = useState('');
-  const [isFarenheit,setFarenheit] = useState(false)
+  const [isFarenheit, setFarenheit] = useState(false);
   return (
-    <div className="conteiner">
-      <ProviderContect.Provider value={{ location, setlocation, apiRespost, setApi,isFarenheit,setFarenheit}}>
+    <Conteiner>
+      <ProviderContect.Provider
+        value={{ location, setlocation, apiRespost, setApi, isFarenheit, setFarenheit }}
+      >
         <MenuLeft />
         <Page />
       </ProviderContect.Provider>
-    </div>
+    </Conteiner>
   );
 }
-
+const Conteiner = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100dvw;
+  height: 100dvh;
+`;
 export default App;
