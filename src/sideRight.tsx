@@ -1,14 +1,20 @@
-import './sideRight.css';
+import styled from 'styled-components';
+
 import Databox from './todayPage/databox';
-import Title from './todayPage/title';
 import SwitchPage from './todayPage/switchpage';
+import Title from './todayPage/title';
 function Page() {
   return (
-    <div className="page">
-      <SwitchPage /> 
+    <PageStyle>
+      <SwitchPage />
       <Title />
       <Databox />
-    </div>
+    </PageStyle>
   );
 }
+const PageStyle = styled.div`
+  background-color: #efefef;
+  height: 100vh;
+  width: 1246px;
+`;
 export default Page;
